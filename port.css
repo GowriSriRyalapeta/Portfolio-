@@ -1,0 +1,730 @@
+/* global styles */
+body {
+    margin: 0;
+    padding: 0;
+
+    background-image: url("back.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* nav bar*/
+.navbar {
+    position: fixed;
+    top: 10px;
+    /* 10px from top */
+    left: 50%;
+    transform: translateX(-50%);
+    /* center horizontally */
+
+    background: #F5F8FB;
+    border: 1.5px solid #DCE7F2;
+    border-radius: 30px;
+
+    padding: 10px 25px;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #1F2A38;
+    font-weight: 500;
+
+    padding: 8px 16px;
+    border-radius: 20px;
+
+    transition: all 0.3s ease;
+}
+
+/* hover effect */
+.nav-links li a:hover {
+    background: #6C8FB3;
+    color: #ffffff;
+}
+
+/* active/click feel */
+.nav-links li a:active {
+    background: #3E5C76;
+}
+
+/* optional subtle shadow */
+.navbar {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* nav bar css done  */
+
+/* intro css  */
+/* layout */
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 80px;
+}
+
+/* image styling */
+#girl {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+
+    border-radius: 50%;
+    /* makes it circle */
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    /* dark shadow */
+
+    border: 4px solid #DCE7F2;
+    margin-right: 240px;
+}
+
+/* heading */
+.hi {
+    font-size: 42px;
+    color: #3E5C76;
+    /* theme match */
+    margin-bottom: 15px;
+
+    letter-spacing: 1px;
+}
+
+/* paragraph */
+.iam {
+    font-size: 20px;
+    /* readable */
+    color: #000000;
+    /* black */
+
+    line-height: 1.6;
+    max-width: 500px;
+
+    opacity: 0.9;
+}
+
+.hi,
+.iam {
+    margin-left: 180px;
+}
+
+.hi {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+.iam {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+/* DONE WITH IAMGE AND INTRO */
+
+/* SECTION BACKGROUND */
+#skills-section {
+    margin-top: 80px;
+    text-align: center;
+    background-color: #F5F8FB;
+    /* fallback background */
+    padding: 40px 20px;
+}
+
+/* HEADING */
+.skills-heading {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #1F2A38;
+    /* main text color */
+    letter-spacing: 2px;
+}
+
+/* FLEX CONTAINER */
+#skills {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* CARD DESIGN */
+.card {
+    width: 180px;
+    height: 180px;
+
+    background: #FFFFFF;
+    /* clean white for contrast */
+    border: 2px solid #DCE7F2;
+    /* soft border */
+
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* ICON */
+.card img {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+/* TEXT */
+.card p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1F2A38;
+    /* primary text */
+}
+
+/* HOVER EFFECT */
+.card:hover {
+    transform: translateY(-10px);
+    background: #F5F8FB;
+    /* soft hover bg */
+    border-color: #7A9EB8;
+    /* accent border */
+}
+
+/* OPTIONAL: subtle glow on hover */
+.card:hover p {
+    color: #3E5C76;
+    /* hover text */
+}
+
+/* =======================
+   ANIMATED SKILLS SECTION
+======================= */
+
+.skills-animated {
+    margin-top: 0px;
+
+    width: 100%;
+    min-height: 70vh;
+    border-top: 1px solid #DCE7F2;
+    border-bottom: 1px solid #DCE7F2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* TITLE */
+.skills-title {
+    font-size: 30px;
+    margin-bottom: 35px;
+    color: #1F2A38;
+}
+
+/* SKILL BLOCK */
+.skill {
+    width: 65%;
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+/* NAME */
+.skill-name {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1F2A38;
+}
+
+/* PROGRESS BAR (THICK) */
+.progress-bar {
+    width: 100%;
+    height: 18px;
+    background: #DCE7F2;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* PROGRESS */
+.progress {
+    position: relative;
+    height: 100%;
+    width: 0;
+
+    background: linear-gradient(90deg, #6C8FB3, #7A9EB8);
+    border-radius: 20px;
+
+    animation: load 2s ease forwards;
+}
+
+/* LEVELS */
+.progress.html {
+    width: 85%;
+    animation-delay: 0.2s;
+}
+
+.progress.cpp {
+    width: 75%;
+    animation-delay: 0.4s;
+}
+
+.progress.java {
+    width: 65%;
+    animation-delay: 0.6s;
+}
+
+/* ANIMATION */
+@keyframes load {
+    from {
+        width: 0;
+    }
+}
+
+/* SHINE EFFECT */
+.progress::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+
+
+    animation: shine 2.5s infinite;
+}
+
+@keyframes shine {
+    to {
+        left: 100%;
+    }
+}
+
+/* =======================
+   ACADEMIC HEADER SECTION
+======================= */
+
+.academic-header {
+    text-align: center;
+    padding: 80px 20px;
+
+
+    /* 🔵 OPTION 1: BLUE SHADE BACKGROUND (CURRENTLY ACTIVE) */
+    background: linear-gradient(135deg, #EAF2FB, #DCE7F2);
+
+    /* 🌌 OPTION 2: USE SAME BACKGROUND IMAGE (UNCOMMENT BELOW) */
+    /*
+    background: transparent;
+    */
+
+    border-top: 1px solid #DCE7F2;
+    border-bottom: 1px solid #DCE7F2;
+}
+
+/* TITLE */
+.academic-title {
+    font-size: 34px;
+    font-weight: 600;
+    color: #1F2A38;
+
+    font-family: 'Playfair Display', serif;
+    /* premium font */
+
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* SUBTEXT */
+.academic-subtitle {
+    font-size: 18px;
+    color: #3E5C76;
+
+    font-family: 'Poppins', sans-serif;
+
+    max-width: 600px;
+    margin: 0 auto;
+    /* center text block */
+
+    line-height: 1.6;
+}
+
+/* ✨ DECORATIVE LINE */
+.academic-title::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    margin: 12px auto;
+    background: #7A9EB8;
+}
+
+.academic-header {
+    text-align: center;
+    padding: 80px 20px;
+
+
+    background: linear-gradient(135deg, #EAF2FB, #DCE7F2);
+
+    border-top: 1px solid #DCE7F2;
+    border-bottom: 1px solid #DCE7F2;
+
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+
+    /* 🔥 smoother animation */
+    animation: fadeSlide 0.9s ease;
+}
+
+/* TEXT ANIMATION */
+.academic-title {
+    animation: fadeSlide 1s ease;
+}
+
+.academic-subtitle {
+    animation: fadeSlide 1.2s ease;
+}
+
+/* KEYFRAMES */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =======================
+   EDUCATION SECTION
+======================= */
+
+.education {
+    width: 100%;
+    padding: 60px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* CARD STYLE */
+.edu-card {
+    width: 75%;
+    max-width: 900px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 30px;
+
+    /* 🔵 BEAUTIFUL LIGHT BLUE SHADE */
+    background: linear-gradient(135deg, #E3F0FA, #D4E6F5);
+
+    /* DARKER BLUE BORDER */
+    border: 2px solid #6C8FB3;
+
+    border-radius: 15px;
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.edu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(62, 92, 118, 0.2);
+}
+
+/* LEFT SIDE */
+.left h2 {
+    font-size: 18px;
+    color: #3E5C76;
+    margin-bottom: 5px;
+}
+
+.left h1 {
+    font-size: 22px;
+    color: #1F2A38;
+    margin-bottom: 10px;
+}
+
+/* DETAILS ROW */
+.details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    color: #1F2A38;
+    font-size: 14px;
+}
+
+/* RIGHT SIDE */
+.right {
+    text-align: right;
+}
+
+/* BUTTON STYLE 🔥 */
+.right button {
+    padding: 8px 18px;
+
+    background: #6C8FB3;
+    color: #fff;
+
+    border: none;
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* BUTTON HOVER */
+.right button:hover {
+    background: #3E5C76;
+}
+
+/* LOCATION */
+.location {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #1F2A38;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+/* =======================
+   ENTRY ANIMATION
+======================= */
+
+.edu-card {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+/* STAGGER EFFECT */
+.edu-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.edu-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.edu-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* KEYFRAMES */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ===== FOCUS SECTION ===== */
+.focus {
+    margin: 50px 0;
+    padding: 50px 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+
+    /* BLUE SHADE BACKGROUND */
+    background: #E3F0FF;
+    /* soft elegant blue */
+
+    /* DARK BLUE SHADOW */
+    box-shadow: 0 10px 30px rgba(30, 80, 140, 0.25);
+    border-radius: 20px;
+}
+
+/* COMMON CARD STYLE */
+.focus .a,
+.focus .b,
+.focus .c {
+    width: 260px;
+    padding: 25px;
+
+    background: #F5F9FF;
+    /* lighter blue inside cards */
+    border: 2px solid #A7C7E7;
+    /* soft blue border */
+
+    border-radius: 15px;
+
+    text-align: center;
+}
+
+/* ICON + TITLE ROW */
+.a1,
+.b1,
+.c1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ICON STYLE */
+.a1 i,
+.b1 i,
+.c1 i {
+    font-size: 22px;
+    color: #2F5D9F;
+    /* strong blue */
+}
+
+/* HEADING */
+.a h1,
+.b h1,
+.c h1 {
+    font-size: 20px;
+    color: #1F2A38;
+    margin: 0;
+}
+
+/* PARAGRAPH */
+.a p,
+.b p,
+.c p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #3E5C76;
+}
+
+/* ===== CENTER BOTTOM QUOTE ===== */
+.d {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.d h1 {
+    font-size: 20px;
+    color: #2F5D9F;
+    font-weight: 500;
+}
+
+/* CONTACT SECTION WRAPPER */
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    /* prevents collapsing */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 80px 10%;
+    position: relative;
+    z-index: 10;
+    /* ensures it’s above background */
+}
+
+/* TITLE */
+.x {
+    text-align: center;
+    font-size: 40px;
+    color: #1F2A38;
+    margin: 60px 0 40px 0;
+    z-index: 10;
+}
+
+/* LEFT SIDE INFO */
+.x-right {
+    flex: 1;
+    min-width: 300px;
+    color: #1F2A38;
+}
+
+.x-right h1 {
+    margin-bottom: 25px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(245, 248, 251, 0.95);
+    border: 1px solid #DCE7F2;
+    font-size: 20px;
+}
+
+/* RIGHT SIDE FORM */
+.x-left {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid #6C8FB3;
+    background: rgba(245, 248, 251, 0.95);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* INPUTS */
+.x-left input,
+.x-left textarea {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #BFD3E6;
+    background: #EAF2F8;
+    padding: 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+.x-left input {
+    height: 40px;
+}
+
+.x-left textarea {
+    height: 90px;
+    resize: none;
+}
+
+/* BUTTON */
+.x-left button {
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background: #6C8FB3;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.x-left button:hover {
+    background: #3E5C76;
+}
